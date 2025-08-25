@@ -4,17 +4,17 @@ from usuario.models.manicurista import Manicurista
 from rol.models import Rol
 
 class Colors:
-    OKBLUE = '\033[94m'    # Azul para éxito
-    WARNING = '\033[93m'   # Amarillo para error
+    OKBLUE = '\033[94m'    
+    WARNING = '\033[93m'  
     RESET = '\033[0m'
 
 class TestManicurista(unittest.TestCase):
     def test_crear_y_validar_manicurista(self):
         try:
-            # Crear rol si no existe
+            
             rol, _ = Rol.objects.get_or_create(nombre="Manicurista")
 
-            # Crear usuario asociado
+            
             user = Usuario.objects.create_user(
                 username="karla_gar",
                 password="karla123*",
@@ -24,7 +24,7 @@ class TestManicurista(unittest.TestCase):
                 rol_id=rol
             )
 
-            # Crear manicurista relacionado con el usuario
+            
             manicurista = Manicurista.objects.create(
                 usuario=user,
                 nombre="Karla",
@@ -37,7 +37,7 @@ class TestManicurista(unittest.TestCase):
                 fecha_contratacion="2022-11-10"
             )
 
-            # Validaciones principales
+           
             self.assertEqual(manicurista.nombre, "Karla")
             self.assertEqual(manicurista.apellido, "García")
             self.assertEqual(manicurista.correo, "karla.garcia@example.com")
@@ -53,3 +53,4 @@ class TestManicurista(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
