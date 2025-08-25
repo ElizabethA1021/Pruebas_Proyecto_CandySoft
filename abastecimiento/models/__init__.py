@@ -1,2 +1,0 @@
-from .abastecimiento import Abastecimiento
-from .insumoAbastecimiento import InsumoAbastecimiento
