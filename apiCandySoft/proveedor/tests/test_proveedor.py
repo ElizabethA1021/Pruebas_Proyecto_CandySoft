@@ -4,8 +4,8 @@ from django.db import IntegrityError
 
 
 class Colors:
-    OKBLUE = '\033[94m'   # Azul
-    WARNING = '\033[93m'  # Amarillo
+    OKBLUE = '\033[94m'  
+    WARNING = '\033[93m'  
     RESET = '\033[0m'
 
 
@@ -79,7 +79,7 @@ class TestProveedor(unittest.TestCase):
                 Proveedor.objects.create(
                     tipo_persona="NATURAL",
                     tipo_documento="CC",
-                    numero_documento="1111111111",  # Repetido
+                    numero_documento="1111111111", 
                     telefono="3022222222",
                     email="unico2@test.com",
                     direccion="Calle 2 #2-2",
@@ -110,7 +110,7 @@ class TestProveedor(unittest.TestCase):
                     tipo_documento="CC",
                     numero_documento="3333333333",
                     telefono="3044444444",
-                    email="correo_unico@test.com",  # Repetido
+                    email="correo_unico@test.com", 
                     direccion="Calle 4 #4-4",
                     ciudad="Cali"
                 )
@@ -124,3 +124,4 @@ class TestProveedor(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
