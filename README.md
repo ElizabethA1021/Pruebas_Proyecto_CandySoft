@@ -122,7 +122,7 @@ Get-Content db_apicandysoft.sql  |
 
 Si bien esta es una segunda opción por si no funciona importar la base de datos con el archivo SQL, es la opción que más recomiendo para garantizar un funcionamiento adecuado
 
-1. Ejecuta el siguiente comando en tu gestor de base de datos MySQL (si intentó primero importar la BD con el archivo SQL y por algún inconveniente se tuvo que recurrir a esta opción, recomiendo borrar la base de datos y volver a crearla, a menos que haya verificado que no se creó nada dentro de la BD)
+1. Ejecuta el siguiente comando en tu gestor de base de datos MySQL (si primero se intentó importar la BD con el archivo SQL y por algún inconveniente se tuvo que recurrir a esta opción, recomiendo borrar la base de datos y volver a crearla, a menos que haya verificado que no se creó nada dentro de la BD)
 
 ```bash
 CREATE DATABASE CandySoftApi;
