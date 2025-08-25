@@ -13,7 +13,7 @@
   - [Crear y activar entorno virtual](#3-crear--y-activar-entorno-virtual)
   - [Instalar dependencias](#4-instalar-dependencias)
   - [Importar bd con el archivo SQL](#5-importar-bd-con-el-archivo-sql)
-    - [Migrar base de datos (opcional)](#51-migrar-base-de-datos-opcional)
+    - [Migrar base de datos (opción recomendada)](#51-migrar-base-de-datos-opcion-recomendada)
 - [4. Ejecutar pruebas unitarias](#ejecutar-pruebas-unitarias)
 ## Descripción de los módulos
  
@@ -118,11 +118,12 @@ Get-Content db_apicandysoft.sql  |
 & "C:\Program Files\MySQL\MySQL Server 9.3\bin\mysql.exe" -u root -p --port=3309 CandySoftApi
 ```
 
-## 5.1 Migrar base de datos (opcional)
+## 5.1 Migrar base de datos (opción recomendada)
 
-Este paso es opcional y sólo debe seguirse si importar la base de datos con el archivo SQL no funciona
+Si bien esta es una segunda opción por si no funciona importar la base de datos con el archivo SQL, es la opción que más recomiendo para garantizar un funcionamiento adecuado
 
-1. Ejecuta el siguiente comando en tu gestor de base de datos MySQL (Este paso debe hacerse ya sea que elija migrar la bd o importarla con el archivo SQL, si ya se realizó no hay que repetirlo)
+1. Ejecuta el siguiente comando en tu gestor de base de datos MySQL (si intentó primero importar la BD con el archivo SQL y por algún inconveniente se tuvo que recurrir a esta opción, recomiendo borrar la base de datos y volver a crearla, a menos que haya verificado que no se creó nada dentro de la BD)
+
 ```bash
 CREATE DATABASE CandySoftApi;
 ```
