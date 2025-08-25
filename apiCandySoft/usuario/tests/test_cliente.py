@@ -15,10 +15,10 @@ class TestCliente(unittest.TestCase):
         """
 
         try:
-            # Aseguramos que exista el rol 'Cliente'
+            
             rol_cliente, _ = Rol.objects.get_or_create(nombre="Cliente")
 
-            # Creamos un usuario
+           
             usuario = Usuario.objects.create_user(
                 username="Carlos_R",
                 password="car12345**",
@@ -28,7 +28,7 @@ class TestCliente(unittest.TestCase):
                 rol_id=rol_cliente
             )
 
-            # Creamos el cliente asociado al usuario
+            
             cliente = Cliente.objects.create(
                 usuario=usuario,
                 nombre="Carlos",
@@ -39,7 +39,7 @@ class TestCliente(unittest.TestCase):
                 celular="3204567890"
             )
 
-            # Validamos que los datos se guardaron correctamente
+            
             self.assertEqual(cliente.nombre, "Carlos")
             self.assertEqual(cliente.apellido, "Ramirez")
             self.assertEqual(cliente.correo, "carlos.ramirez@example.com")
@@ -53,3 +53,4 @@ class TestCliente(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
