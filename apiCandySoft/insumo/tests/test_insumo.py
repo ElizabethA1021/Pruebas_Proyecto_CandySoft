@@ -4,28 +4,28 @@ from django.db import IntegrityError
 
 
 class Colors:
-    OKBLUE = '\033[94m'   # Azul
-    WARNING = '\033[93m'  # Amarillo
+    OKBLUE = '\033[94m'   
+    WARNING = '\033[93m' 
     RESET = '\033[0m'
 
 
 class TestInsumo(unittest.TestCase):
     def test_crear_insumo_con_estado_automatico(self):
         try:
-            # Crear una marca asociada
+            
             marca = Marca.objects.create(nombre="CND")
 
-            # Crear un insumo con stock > 5 (estado debe ser Activo)
+            
             insumo = Insumo.objects.create(
                 nombre="Aceite para cutículas",
                 stock=8,
                 marca_id=marca
             )
 
-            # Validaciones
+            
             self.assertEqual(insumo.nombre, "Aceite para cutículas")
             self.assertEqual(insumo.stock, 8)
-            self.assertEqual(insumo.estado, "Activo")  # Validación del estado automático
+            self.assertEqual(insumo.estado, "Activo") 
             self.assertEqual(insumo.marca_id.nombre, "CND")
 
             print(f"{Colors.OKBLUE}✔ Insumo creado con éxito: {insumo.nombre}, Estado: {insumo.estado}{Colors.RESET}")
@@ -38,7 +38,7 @@ class TestInsumo(unittest.TestCase):
         try:
             marca = Marca.objects.create(nombre="Essie")
 
-            # Caso 1: stock bajo (1 a 5)
+            
             insumo_bajo = Insumo.objects.create(
                 nombre="Toallas desechables",
                 stock=4,
@@ -46,7 +46,7 @@ class TestInsumo(unittest.TestCase):
             )
             self.assertEqual(insumo_bajo.estado, "Bajo")
 
-            # Caso 2: stock agotado (0)
+            
             insumo_agotado = Insumo.objects.create(
                 nombre="Quitaesmalte en gel",
                 stock=0,
@@ -66,7 +66,7 @@ class TestInsumo(unittest.TestCase):
 
             with self.assertRaises(IntegrityError):
                 Insumo.objects.create(
-                    nombre=None,  # Nombre obligatorio
+                    nombre=None,  
                     stock=15,
                     marca_id=marca
                 )
@@ -80,3 +80,4 @@ class TestInsumo(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
