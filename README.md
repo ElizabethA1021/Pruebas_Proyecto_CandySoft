@@ -144,7 +144,11 @@ pip install "django<4.2"
 ```
 
 ## Ejecutar pruebas unitarias
-Para comprobar el correcto funcionamiento de los módulos, ejecuta las pruebas unitarias con los siguientes comandos:
+1. Desde la terminal, navega hasta la carpeta donde se encuentra el archivo manage.py ejecutando este comando
+```bash
+cd apiCandySoft
+```
+2. Para comprobar el correcto funcionamiento de los módulos, ejecuta las pruebas unitarias con los siguientes comandos:
 
 - Módulo insumo (Carpeta insumo/tests/)
 ```bash
