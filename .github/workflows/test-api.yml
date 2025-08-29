@@ -43,11 +43,11 @@ jobs:
           echo "SECRET_KEY=django-insecure-ci-key" >> $GITHUB_ENV
           echo "DEBUG=False" >> $GITHUB_ENV
           echo "DB_ENGINE=django.db.backends.mysql" >> $GITHUB_ENV
-          echo "DB_NAME=CandySoftApi2" >> $GITHUB_ENV
+          echo "DB_NAME=CandySoftApi" >> $GITHUB_ENV
           echo "DB_USER=root" >> $GITHUB_ENV
           echo "DB_PASSWORD=root" >> $GITHUB_ENV
           echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
-          echo "DB_PORT=3308" >> $GITHUB_ENV
+          echo "DB_PORT=3309" >> $GITHUB_ENV
 
       - name: Run migrations
         run: python apiCandySoft/manage.py migrate
