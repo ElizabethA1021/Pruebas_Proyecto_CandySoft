@@ -1,4 +1,4 @@
-## Pruebas - Proyecto API Candy Soft
+# Pruebas (Unitarias - Automatizadas) - Proyecto API Candy Soft
 
 **API CandySoft** es una solución integral diseñada para optimizar la gestión de Candy Nails Spa, un negocio dedicado al diseño y cuidado de uñas. El sistema permite organizar de forma eficiente procesos como reservas de citas, manejo de insumos, control de servicios y gestión de cobros, ofreciendo una solución práctica y adaptable para la operación del negocio.
 
@@ -13,9 +13,13 @@
   - [Crear y activar entorno virtual](#3-crear--y-activar-entorno-virtual)
   - [Instalar dependencias](#4-instalar-dependencias)
   - [Importar bd con el archivo SQL](#5-importar-bd-con-el-archivo-sql)
-    - [Migrar base de datos (opción recomendada)](#51-migrar-base-de-datos-opcion-recomendada)
+    - [Migrar base de datos (opción recomendada)](#51-migrar-base-de-datos-opción-recomendada)
 - [4. Ejecutar pruebas unitarias](#ejecutar-pruebas-unitarias)
-## Descripción de los módulos
+- [5. Pruebas Automatizadas (Actividad: Implantación)](#5-pruebas-automatizadas-agregado-por-actividad-de-implantación)
+  - [¿Cómo funcionan?](#cómo-funcionan)
+  - [Resultados](#resultados)
+  - [Beneficios](#beneficios)
+# Descripción de los módulos
  
 - **Módulo insumo**: Supervisa el inventario de productos y materiales, controlando existencias, entradas y salidas, y generando alertas para reposición cuando sea necesario. 
 - **Módulo Manicurista**: Administra la información del personal encargado de realizar los servicios a los clientes, incluyendo datos de contacto, disponibilidad y asignación de citas.
@@ -25,7 +29,7 @@
 
 ---
 
-## Herramientas utilizadas  
+# Herramientas utilizadas  
 
 Para garantizar el correcto funcionamiento y la ejecución óptima del sistema, se cuenta con la instalación previa de las siguientes herramientas, las cuales son esenciales para la implementación y operación del proyecto:
 
@@ -45,7 +49,7 @@ Para garantizar el correcto funcionamiento y la ejecución óptima del sistema, 
 
 ---
 
-## Paso a paso: instalación y despliegue
+# Paso a paso: instalación y despliegue
 ## 1. Clonar repositorio  
 
 Opción A: Usando GitHub
@@ -106,6 +110,9 @@ py -m venv venv
 ```bash
 pip install -r requirements.txt
 ```
+
+---
+
 ## 5. Importar bd con el archivo SQL
 
 1. Ejecuta el siguiente comando en tu gestor de base de datos MySQL para crear una base de datos vacía
@@ -117,6 +124,8 @@ CREATE DATABASE CandySoftApi;
 Get-Content db_apicandysoft.sql  | 
 & "C:\Program Files\MySQL\MySQL Server 9.3\bin\mysql.exe" -u root -p --port=3309 CandySoftApi
 ```
+
+---
 
 ## 5.1 Migrar base de datos (opción recomendada)
 
@@ -144,7 +153,9 @@ pip uninstall django
 pip install "django<4.2"
 ```
 
-## Ejecutar pruebas unitarias
+---
+
+# Ejecutar pruebas unitarias
 1. Desde la terminal, asegúrese de estar en la carpeta donde se encuentra el archivo manage.py ejecutando este comando
 ```bash
 cd apiCandySoft
@@ -173,6 +184,35 @@ py manage.py test proveedor.tests.test_proveedor
 ```bash
 py manage.py test servicio.tests.test_servicio
 ```
+
+---
+
+# 5. Pruebas Automatizadas (Agregado por actividad de Implantación)
+
+Las **pruebas automatizadas** se ejecutan de manera continua cada vez que se realizan cambios en el proyecto.
+
+📌 Puedes ver el historial de pruebas en [GitHub Actions](https://github.com/ElizabethA1021/Pruebas_Proyecto_CandySoft/actions).
+
+📂 La configuración de estos flujos se encuentra en la carpeta .github/workflows dentro del repositorio.
+
+## ¿Cómo funcionan?
+
+- El flujo de trabajo levanta un entorno de pruebas con la base de datos y las dependencias necesarias.  
+- Se aplican las migraciones de Django para preparar la base de datos.  
+- Finalmente, se ejecutan las pruebas definidas en el proyecto para verificar que todo funcione correctamente.  
+
+## Resultados
+
+- Si todas las pruebas pasan, el proceso se marca como exitoso ✅.  
+- Si alguna falla, el proceso se detiene y muestra el error para poder corregirlo ❌.
+- Si las pruebas se están ejecutando, se encuentra "En curso" 🟡.
+
+## Beneficios
+
+- Permite detectar errores automáticamente antes de integrar cambios.  
+- Garantiza mayor estabilidad y calidad en el desarrollo.  
+- Asegura que las nuevas funciones no rompan lo que ya estaba funcionando.  
+
 
 
 
