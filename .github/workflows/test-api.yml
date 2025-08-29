@@ -25,11 +25,11 @@ jobs:
           --health-retries=5
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4   # actualizado de v3 → v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5  # actualizado de v4 → v5
         with:
           python-version: "3.10"
 
@@ -38,7 +38,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Configure Django environment
+      - name: Configure Django environment variables
         run: |
           echo "SECRET_KEY=django-insecure-ci-key" >> $GITHUB_ENV
           echo "DEBUG=False" >> $GITHUB_ENV
@@ -49,8 +49,8 @@ jobs:
           echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
           echo "DB_PORT=3309" >> $GITHUB_ENV
 
-      - name: Run migrations
+      - name: Run Django migrations
         run: python apiCandySoft/manage.py migrate
 
-      - name: Run tests
+      - name: Run Django tests
         run: python apiCandySoft/manage.py test
