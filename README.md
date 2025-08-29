@@ -52,14 +52,14 @@ Para garantizar el correcto funcionamiento y la ejecución óptima del sistema, 
 # Paso a paso: instalación y despliegue
 ## 1. Clonar repositorio  
 
-Opción A: Usando GitHub
+**Opción A:** Usando GitHub
 1. Ingresa al repositorio y haz clic en el botón **Code**.  
 2. Copia el enlace HTTPS.  
 3. Abre **Visual Studio Code (VS Code)**, ve a Source Control y selecciona Clonar repositorio..  
 4. Pega el enlace y elige la carpeta donde guardarás el proyecto.  
 5. Luego se mostrará un mensaje preguntando si desea abrir el proyecto, haz click en **Abrir** y **VS Code** abrirá automáticamente el proyecto.  
 
-Opción B: Descargar ZIP  
+**Opción B:** Descargar ZIP  
 1. Ingresa al repositorio y haz clic en el botón **Code**.  
 2. Selecciona la opción **Download ZIP** (Se descagará el proyecto comprimido en tu dispositivo).    
 3. Extrae el archivo y ábrelo en **VS Code**. 
