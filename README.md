@@ -145,7 +145,7 @@ pip install "django<4.2"
 ```
 
 ## Ejecutar pruebas unitarias
-1. Desde la terminal, asegurese de estar en la carpeta donde se encuentra el archivo manage.py ejecutando este comando
+1. Desde la terminal, asegúrese de estar en la carpeta donde se encuentra el archivo manage.py ejecutando este comando
 ```bash
 cd apiCandySoft
 ```
