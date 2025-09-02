@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4   # actualizado de v3 → v4
+        uses: actions/checkout@v4   
 
       - name: Set up Python
-        uses: actions/setup-python@v5  # actualizado de v4 → v5
+        uses: actions/setup-python@v5  
         with:
           python-version: "3.10"
 
